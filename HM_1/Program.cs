@@ -1,35 +1,14 @@
-﻿Console.WriteLine("Введите количество строк");
-int linVol = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите количество столбцов");
-int colVol = Convert.ToInt32(Console.ReadLine());
-
-double[,] numbers = new double[linVol, colVol];
-FillArrayRandomNumbers(numbers);
-PrintArray(numbers);
-
-void FillArrayRandomNumbers(double[,] array)
+﻿Console.WriteLine("Введите количество строк и столбцов");
+int m = Convert.ToInt32(Console.ReadLine());
+int n = Convert.ToInt32(Console.ReadLine());
+int[,] array2d = new int[m, n];
+Random random = new Random();
+for (int i = 0; i < m; i++)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            array[i, j] = Convert.ToDouble(new Random().Next(-100, 100)) / 10;
-        }
-    }
+  for (int j = 0; j < n; j++)
+  {
+  array2d[i, j] = random.Next(-10,10);
+  Console.Write(array2d[i, j] + " "); 
+  }
+  Console.WriteLine();
 }
-
-void PrintArray(double[,] array)
-{
-    Console.WriteLine("Сгенерирован массив:");
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write(array[i, j] + " ");
-        }
-        Console.WriteLine("");
-    }
-}
-
-
