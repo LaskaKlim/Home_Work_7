@@ -1,5 +1,6 @@
 ﻿Console.WriteLine("Для генерации массива введите количество строк и столбцов");
 int linVol = Convert.ToInt32(Console.ReadLine());
+
 int colVol = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите число,которое необходимо найти");
 int numb = Convert.ToInt32(Console.ReadLine());
